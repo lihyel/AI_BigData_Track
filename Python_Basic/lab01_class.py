@@ -13,20 +13,27 @@
 
 # name이 "똑똑한계산기"인 calculator 객체를 하나 생성한다. 계산기 객체의 함수들을 이용하여, 5를 더하고 10을 곱하고 2를 빼고, 3으로 나눈 후, 결과를 출력하세요.
 
-class calculator():
+class calculator:
     result = 0.0
     name = ""
     
+    # constructor (X)
+    
     # method
-    def add(self):
-        print(self.result = self + self.result)
-    def subtract(self):
-        print(self.result = self - self.result)
-    def multiply(self):
-        print(self.result = self * self.result)
-    def divide(self):
-        print(self.result = self // self.result)
-c1 = calculator(5)
+    def add(self, *num): #개수 제한이 없다고 했으므로..
+        for n in num:
+            self.result = self.result + n      
+    def subtract(self, num): # 매개인자 하나!
+        self.result = self.result - num
+    def multiply(self, num): # 매개인자 하나!
+        self.result = self.result * num       
+    def divide(self, num): # 매개인자 하나!
+        self.result = self.result / num
 
-c1.add(5)
-cl.add()
+def main():
+    c = calculator()
+    c.name = "똑똑한 계산기"
+    c.add(5); c.multiply(10); c.subtract(2); c.divide(3); 
+    print(c.result);
+
+main()
